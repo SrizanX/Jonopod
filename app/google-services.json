@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "856637692317",
+    "project_id": "olympiandroids-jonopod",
+    "storage_bucket": "olympiandroids-jonopod.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:856637692317:android:160187c6e7fe3a9c52b774",
+        "android_client_info": {
+          "package_name": "com.olympiandroids.jonopod"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "856637692317-t5id5hvj46ckef8p6cc2o90tu5edt27l.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBd9B_NIfs6XWKU7LB6UgRfyWLjnVCbWuM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "856637692317-t5id5hvj46ckef8p6cc2o90tu5edt27l.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

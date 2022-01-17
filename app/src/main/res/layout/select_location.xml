@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/secondaryLightColor"
+    android:padding="16dp">
+
+    <Spinner
+
+        android:id="@+id/spinner_division"
+        style="@android:style/Widget.Holo.Light.Spinner"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:completionHint="Set Division"
+        android:spinnerMode="dropdown"
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toStartOf="@id/guideline_vertical"
+        app:layout_constraintStart_toStartOf="@+id/textView_division"
+        app:layout_constraintTop_toBottomOf="@+id/textView_division" />
+
+    <Spinner
+        android:id="@+id/spinner_district"
+        style="@android:style/Widget.Holo.Light.Spinner"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/textView_district"
+        app:layout_constraintTop_toBottomOf="@+id/textView_district" />
+
+    <TextView
+        android:id="@+id/textView_division"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Select Division"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView_district"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:text="Select District"
+        app:layout_constraintBaseline_toBaselineOf="@+id/textView_division"
+        app:layout_constraintStart_toEndOf="@id/guideline_vertical" />
+
+    <TextView
+        android:id="@+id/textView_upazila"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Select Upazila"
+        app:layout_constraintStart_toStartOf="@+id/spinner_division"
+        app:layout_constraintTop_toBottomOf="@+id/spinner_division" />
+
+    <Spinner
+
+        style="@android:style/Widget.Holo.Light.Spinner"
+        android:id="@+id/spinner_upazila"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toStartOf="@id/guideline_vertical"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/textView_upazila"
+        app:layout_constraintTop_toBottomOf="@+id/textView_upazila" />
+
+    <Button
+        android:id="@+id/button_done"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:layout_marginTop="16dp"
+        android:text="Done"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinner_union" />
+
+    <TextView
+        android:id="@+id/textView_union_word"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Select Union/Word"
+        app:layout_constraintBaseline_toBaselineOf="@+id/textView_upazila"
+        app:layout_constraintStart_toStartOf="@+id/spinner_district" />
+
+    <Spinner
+        style="@android:style/Widget.Holo.Light.Spinner"
+        android:id="@+id/spinner_union"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/textView_union_word"
+        app:layout_constraintTop_toBottomOf="@+id/textView_union_word" />
+
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
+    <ProgressBar
+        android:id="@+id/progress_bar_select_locaton"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.19999999" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

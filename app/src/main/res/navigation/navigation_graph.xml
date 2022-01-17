@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/navigation_home">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="com.olympiandroids.jonopod.ui.home.HomeFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_home" >
+
+        <action
+            android:id="@+id/action_navigation_home_to_nav_health_service"
+            app:destination="@id/navigation_health_service" />
+        <action
+            android:id="@+id/action_navigation_home_to_nav_police"
+            app:destination="@id/navigation_police" />
+        <action
+            android:id="@+id/action_navigation_home_to_nav_local_gov"
+            app:destination="@id/navigation_local_gov"
+            app:enterAnim="@anim/enter_anim" />
+        <action
+            android:id="@+id/action_navigation_home_to_dialogFra"
+            app:destination="@id/navigation_select_location" />
+        <action
+            android:id="@+id/action_navigation_home_to_fireServiceFragment"
+            app:destination="@id/navigation_fire_service" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_feeds"
+        android:name="com.olympiandroids.jonopod.ui.feed.FeedFragment"
+        android:label="@string/title_feeds"
+        tools:layout="@layout/fragment_feeds" />
+
+    <fragment
+        android:id="@+id/navigation_profile"
+        android:name="com.olympiandroids.jonopod.ui.profile.ProfileFragment"
+        android:label="@string/title_profile"
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_navigation_profile_to_navigation_authentication"
+            app:destination="@id/navigation_authentication"
+            app:popUpTo="@id/navigation_home" />
+        <action
+            android:id="@+id/action_navigation_profile_to_navigation_editServiceProfileFragment"
+            app:destination="@id/navigation_editServiceProfileFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_authentication"
+        android:name="com.olympiandroids.jonopod.ui.authentication.AuthenticationPagerFragment"
+        android:label="Login or Register"
+        tools:layout="@layout/fragment_authentication" >
+        <action
+            android:id="@+id/action_navigation_authentication_to_navigation_profile"
+            app:destination="@id/navigation_profile"
+            app:popUpTo="@id/navigation_home" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/navigation_police"
+        android:name="com.olympiandroids.jonopod.ui.police.PoliceFragment"
+        android:label="@string/title_police"
+        tools:layout="@layout/service_profiles" />
+
+    <fragment
+        android:id="@+id/navigation_local_gov"
+        android:name="com.olympiandroids.jonopod.ui.localgov.LocalGovFragment"
+        android:label="@string/title_local_gov"
+        tools:layout="@layout/service_profiles" />
+    <fragment
+        android:id="@+id/navigation_health_service"
+        android:name="com.olympiandroids.jonopod.ui.health.HealthServiceFragment"
+        android:label="@string/title_health_service"
+        tools:layout="@layout/fragment_health_service" />
+    <dialog
+        android:id="@+id/navigation_select_location"
+        android:name="com.olympiandroids.jonopod.ui.selectlocation.SelectLocationFragment"
+        android:label="Select Your Location">
+        <argument
+            android:name="openedFromProfileFragment"
+            app:argType="boolean"
+            android:defaultValue="false" />
+        <argument
+            android:name="openedFromReportFragment"
+            app:argType="boolean"
+            android:defaultValue="false" />
+    </dialog>
+    <fragment
+        android:id="@+id/navigation_report"
+        android:name="com.olympiandroids.jonopod.ui.report.ReportFragment"
+        android:label="@string/title_report"
+        tools:layout="@layout/fragment_report" >
+        <action
+            android:id="@+id/action_navigation_report_to_mapsFragment"
+            app:destination="@id/navigation_maps" />
+        <action
+            android:id="@+id/action_navigation_report_to_navigation_select_location"
+            app:destination="@id/navigation_select_location" />
+    </fragment>
+    <fragment
+        android:id="@+id/navigation_fire_service"
+        android:name="com.olympiandroids.jonopod.ui.fireservice.FireServiceFragment"
+        android:label="Fire Service"
+        tools:layout="@layout/service_profiles" />
+    <fragment
+        android:id="@+id/navigation_maps"
+        android:name="com.olympiandroids.jonopod.ui.map.MapsFragment"
+        android:label="Select Your Exact Location"
+        tools:layout="@layout/fragment_maps" />
+    <fragment
+        android:id="@+id/navigation_editServiceProfileFragment"
+        android:name="com.olympiandroids.jonopod.ui.profile.editserviceprofile.EditServiceProfileFragment"
+        android:label="Service Profile"
+        tools:layout="@layout/fragment_edit_service_profile" >
+        <action
+            android:id="@+id/action_navigation_editServiceProfileFragment_to_navigation_select_location"
+            app:destination="@id/navigation_select_location" />
+    </fragment>
+
+
+</navigation>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <!--My Colors-->
+    <color name="primaryColor">#455a64</color>
+    <color name="primaryLightColor">#718792</color>
+    <color name="primaryDarkColor">#1c313a</color>
+    <color name="secondaryColor">#8fa3ad</color>
+    <color name="secondaryLightColor">#bfd4df</color>
+    <color name="secondaryDarkColor">#61747e</color>
+    <color name="primaryTextColor">#ffffff</color>
+    <color name="secondaryTextColor">#000000</color>
+    <color name="ic_launcher_background">#8168AB</color>
+
+</resources>

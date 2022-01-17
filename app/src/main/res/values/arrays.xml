@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="genders">
+        <item>Male</item>
+        <item>Female</item>
+        <item>Other</item>
+    </string-array>
+
+
+    <string-array name="report_category">
+        <item>Road Condition</item>
+        <item>Sound Pollution</item>
+        <item>Child Labour</item>
+        <item>Child Marriage</item>
+        <item>Illegal Infrastructure</item>
+
+
+    </string-array>
+
+    <string-array name="sectors">
+        <item>Local Government</item>
+        <item>Police</item>
+        <item>Fire service</item>
+        <item>Health</item>
+    </string-array>
+
+</resources>

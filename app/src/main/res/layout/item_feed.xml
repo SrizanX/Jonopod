@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#AAE8E8E2"
+    android:layout_margin="8dp">
+
+    <ImageView
+
+        android:id="@+id/image_view_profile_picture"
+        android:layout_width="64dp"
+        android:layout_height="64dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/text_view_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+
+        tools:text="Mahdi Saifullah Srizan"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/image_view_profile_picture"
+        app:layout_constraintTop_toTopOf="@+id/image_view_profile_picture" />
+
+    <TextView
+        android:id="@+id/text_view_post_text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:maxLines="4"
+        android:padding="8dp"
+        android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla viverra mattis erat ac tempus. Nam pellentesque rutrum nisl vitae congue. Proin finibus erat lorem, eu accumsan nibh rhoncus eget. Pellentesque id sollicitudin ex, a vulputate nunc. Nullam tempus, elit eget feugiat iaculis, augue felis tincidunt nisi, ac bibendum nunc orci ac nisl. Morbi porttitor nibh ut risus finibus faucibus. Nunc eu turpis finibus, laoreet sem id, mollis lorem. Cras malesuada, sem eu finibus vulputate, nibh nunc fringilla leo, ac ultricies eros enim at purus."
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/image_view_profile_picture"
+        app:layout_constraintTop_toBottomOf="@+id/image_view_profile_picture" />
+
+    <TextView
+        android:id="@+id/text_view_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="30 October, 2021"
+        app:layout_constraintStart_toStartOf="@+id/text_view_name"
+        app:layout_constraintTop_toBottomOf="@+id/text_view_name" />
+
+    <ImageView
+        android:id="@+id/image_view_image1"
+        android:layout_width="0dp"
+        android:layout_height="247dp"
+        android:layout_marginTop="32dp"
+
+        android:background="@color/primaryColor"
+        android:scaleType="centerCrop"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/text_view_post_text"
+        app:layout_constraintTop_toBottomOf="@+id/text_view_post_text"
+        tools:srcCompat="@tools:sample/backgrounds/scenic" />
+
+    <ImageButton
+        android:id="@+id/ib_thumb_up"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:background="@android:color/transparent"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="@+id/image_view_image1"
+        app:layout_constraintTop_toBottomOf="@+id/image_view_image1"
+        app:srcCompat="@drawable/ic_thumb_up" />
+
+    <ImageButton
+        android:id="@+id/ib_thumb_down"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/ib_thumb_up"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/ib_thumb_up"
+        app:srcCompat="@drawable/ic_thumb_down" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

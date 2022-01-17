@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout_report"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="8dp"
+    tools:context=".ui.report.ReportFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/image_view1_report"
+                android:layout_width="395dp"
+                android:layout_height="202dp"
+                android:maxHeight="200dp"
+                android:src="@drawable/ic_image_upload"
+                app:layout_constraintBottom_toTopOf="@+id/spinner_report_category"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <Spinner
+                android:id="@+id/spinner_report_category"
+                style="@android:style/Widget.Holo.Light.Spinner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:entries="@array/report_category"
+                android:minHeight="48dp"
+                app:layout_constraintBaseline_toBaselineOf="@+id/textView11"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/textInputLayout"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="395dp"
+                android:layout_height="200dp"
+                android:minHeight="200dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/button_get_location">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/tiet_report_statement"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="top"
+                    android:hint="Enter Your Statement"
+                    tools:layout_editor_absoluteX="11dp"
+                    tools:layout_editor_absoluteY="359dp" />
+
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <Button
+                android:id="@+id/button_submit_report"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Submit"
+                android:textAllCaps="false"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <Button
+                android:id="@+id/button_get_location"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                android:layout_width="wrap_content"
+
+                android:layout_height="wrap_content"
+
+                android:drawableLeft="@drawable/ic_my_location"
+                android:text="Get Location"
+                android:textAllCaps="false"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/textView_latitude" />
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:visibility="invisible"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/button_submit_report"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/button_submit_report" />
+
+            <CheckBox
+                android:id="@+id/check_box_anonymous"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Annonimus Report"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/button_select_authority" />
+
+            <CheckBox
+                android:id="@+id/check_box_public_post"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Share as Public Post"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/check_box_anonymous" />
+
+
+            <ImageButton
+                android:id="@+id/image_button_add_image"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:src="@drawable/ic_add_circle_outline"
+                android:visibility="invisible"
+                tools:layout_editor_absoluteX="391dp"
+                tools:layout_editor_absoluteY="214dp" />
+
+            <TextView
+                android:id="@+id/textView_location_coordinates"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:text="Location Coordinates: "
+                app:layout_constraintEnd_toStartOf="@+id/button_get_location"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/spinner_report_category" />
+
+            <TextView
+                android:id="@+id/textView_latitude"
+                android:layout_width="225dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toStartOf="@+id/button_get_location"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView_location_coordinates" />
+
+            <TextView
+                android:id="@+id/textView_longitude"
+                android:layout_width="225dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toStartOf="@+id/button_get_location"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView_latitude" />
+
+            <TextView
+                android:id="@+id/textView11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Category: "
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/image_view1_report" />
+
+            <Button
+                android:id="@+id/button_select_authority"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Select Authority"
+                android:textAllCaps="false"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayout" />
+
+            <TextView
+                android:id="@+id/textView_authority_location"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="start|end"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/button_select_authority"
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayout"
+                tools:text="Location" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.core.widget.NestedScrollView>
+
+
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
