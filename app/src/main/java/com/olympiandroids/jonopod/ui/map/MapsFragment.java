@@ -16,6 +16,7 @@ import androidx.annotation.Nullable;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.Navigation;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -26,10 +27,13 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.olympiandroids.jonopod.R;
+import com.olympiandroids.jonopod.ui.report.ReportViewModel;
 
 import java.util.Locale;
 
 public class MapsFragment extends Fragment {
+
+    private ReportViewModel reportViewModel;
 
     private GoogleMap map;
     private LatLng currentLatlong;
@@ -81,6 +85,7 @@ public class MapsFragment extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        reportViewModel = new ViewModelProvider(requireActivity()).get(ReportViewModel.class);
 
     }
 
@@ -114,7 +119,8 @@ public class MapsFragment extends Fragment {
         if (item.getItemId() == R.id.map_select_done) {
             if(map.getMyLocation()!=null){
                 LatLng latLng = new LatLng(map.getMyLocation().getLatitude(),map.getMyLocation().getLongitude());
-                Toast.makeText(requireActivity(), latLng.toString(), Toast.LENGTH_SHORT).show();
+                //Toast.makeText(requireActivity(), latLng.toString(), Toast.LENGTH_SHORT).show();
+                reportViewModel.setLocationCoordinates(latLng);
 
 
                 Navigation.findNavController(requireActivity(),R.id.nav_host_fragment).popBackStack();

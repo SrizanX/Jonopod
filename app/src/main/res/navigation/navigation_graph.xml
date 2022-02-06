@@ -13,10 +13,12 @@
 
         <action
             android:id="@+id/action_navigation_home_to_nav_health_service"
-            app:destination="@id/navigation_health_service" />
+            app:destination="@id/navigation_health_service"
+            app:enterAnim="@anim/enter_anim" />
         <action
             android:id="@+id/action_navigation_home_to_nav_police"
-            app:destination="@id/navigation_police" />
+            app:destination="@id/navigation_police"
+            app:enterAnim="@anim/enter_anim" />
         <action
             android:id="@+id/action_navigation_home_to_nav_local_gov"
             app:destination="@id/navigation_local_gov"
@@ -26,7 +28,8 @@
             app:destination="@id/navigation_select_location" />
         <action
             android:id="@+id/action_navigation_home_to_fireServiceFragment"
-            app:destination="@id/navigation_fire_service" />
+            app:destination="@id/navigation_fire_service"
+            app:enterAnim="@anim/enter_anim" />
     </fragment>
 
     <fragment

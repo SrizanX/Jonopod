@@ -116,6 +116,7 @@ public class ProfileFragment extends Fragment implements ServiceProfileRecyclerA
     }
     @Override
     public void onDeleteButtonClick(DocumentSnapshot documentSnapshot, int position) {
+
         AlertDialog.Builder builder = new AlertDialog.Builder(requireContext());
         builder.setMessage("Delete Profile?");
         builder.setPositiveButton("Confirm", (dialog, which) -> {

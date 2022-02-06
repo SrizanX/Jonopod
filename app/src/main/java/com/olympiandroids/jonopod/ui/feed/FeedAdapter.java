@@ -1,6 +1,7 @@
 package com.olympiandroids.jonopod.ui.feed;
 
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
@@ -20,11 +21,13 @@ import com.olympiandroids.jonopod.model.User;
 
 public class FeedAdapter extends FirestoreRecyclerAdapter<Report, FeedAdapter.ViewHolder> {
 
+    private final FeedClickListener mClickListener;
 
     private final String TAG = FeedAdapter.class.getName();
 
-    public FeedAdapter(@NonNull FirestoreRecyclerOptions<Report> options) {
+    public FeedAdapter(@NonNull FirestoreRecyclerOptions<Report> options, FeedClickListener clickListener) {
         super(options);
+        mClickListener = clickListener;
     }
 
 
@@ -66,15 +69,11 @@ public class FeedAdapter extends FirestoreRecyclerAdapter<Report, FeedAdapter.Vi
 
 
         }
-
         Glide.with(holder.binding.getRoot())
                 .load(model.getImageUrl())
                 .centerCrop()
                 .into(holder.binding.imageViewImage1);
         holder.binding.textViewPostText.setText(model.getStatement());
-
-
-
     }
 
     private void getName(String userUID) {
@@ -82,11 +81,21 @@ public class FeedAdapter extends FirestoreRecyclerAdapter<Report, FeedAdapter.Vi
 
     }
 
-    public static class ViewHolder extends RecyclerView.ViewHolder {
+    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         ItemFeedBinding binding;
         public ViewHolder(@NonNull ItemFeedBinding binding) {
             super(binding.getRoot());
             this.binding = binding;
+            this.binding.imageViewImage1.setOnClickListener(this);
         }
+
+        @Override
+        public void onClick(View v) {
+            mClickListener.onFeedClick(getSnapshots().getSnapshot(getBindingAdapterPosition()),getBindingAdapterPosition());
+        }
+    }
+
+    public interface FeedClickListener{
+        void onFeedClick(DocumentSnapshot documentSnapshot, int position);
     }
 }
